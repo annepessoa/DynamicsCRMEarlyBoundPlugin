@@ -19,7 +19,7 @@ namespace APX.XRM.Plugins
                 var location = ctx.Service.GetEntity<APX_Location>(trip.apx_Location, new ColumnSet(APX_Location.Fields.apx_Name));
 
                 var tripToUpdate = new apx_Trips(trip.Id);
-                tripToUpdate.apx_Name = $"Trip to {location?.apx_Name} on {trip?.apx_Start}";
+                tripToUpdate.apx_Name = $"Trip to {location?.apx_Name} on {trip.apx_Start}";
                 ctx.Service.Update(tripToUpdate);
             }
         }
